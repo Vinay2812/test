@@ -15,4 +15,5 @@ mssql
   .then(() => logger.info("Connection has been established successfully."))
   .catch((err) => logger.error("Unable to connect to the database: ", err));
 
+mssql.sync();
 export default mssql;
