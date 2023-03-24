@@ -11,4 +11,16 @@ export const registerReq = Joi.object({
         full_address: Joi.string().required()
     }).required(),
     mobile: Joi.array().items(Joi.number()).max(10).min(1).required(),
-}).required()
+}).required();
+
+export const loginReq = Joi.object({
+    username: Joi.string().required(),
+    password: Joi.string().required()
+}).required();
+
+export const updateUserReq = Joi.object({
+    userId: Joi.string().required(),
+    field:  Joi.string().allow(...["email", "username", "password"]).required(),
+    update_value: Joi.string().required(),
+}).required();
+

@@ -39,6 +39,17 @@ export const user_otp_details = mssql.define("user_otp_data", {
         type: DataTypes.INTEGER,
     }
 })
+
+export const users_data = mssql.define("users_data", {
+    userId: {
+        type: DataTypes.STRING(100),
+        primaryKey: true,
+    },
+    username:{
+        type: DataTypes.STRING(50),
+        allowNull: false
+    }
+})
 /*
 create table user_login(
     userId nvarchar(100) primary key,

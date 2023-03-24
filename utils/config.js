@@ -9,4 +9,5 @@ export const {
   DB_PASSWORD,
   DB_SERVER,
   SOCKET_PORT = 5500,
+  REDIS_HOST,
 } = process.env;

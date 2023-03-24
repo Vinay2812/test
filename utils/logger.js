@@ -1,13 +1,14 @@
-import { format, createLogger, transports } from "winston";
+import { createLogger, transports } from "winston";
 import { NODE_ENV } from "./config.js";
 
 const symbolMap = {
-  ok: "\u001b[32m\u221A",
-  err: "\u001b[31m\u00D7",
+  debug: "\u001b[32m\u221A",
+  error: "\u001b[31m\u00D7",
+  info: "\u001b[36m\u221A"
 };
 
 function logData(info, next) {
-  const symbol = info.level === "error" ? symbolMap["err"] : symbolMap["ok"];
+  const symbol = symbolMap[info.level];
   console.log(
     `${symbol} { level: ${
       info.level
