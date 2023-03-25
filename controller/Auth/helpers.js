@@ -16,7 +16,7 @@ export async function compareHash(hashedData, data){
 
 export async function getOneUser(query) {
   const user = await users.findOne(query);
-  return user;
+  return user.dataValues;
 }
 
 export async function updateOneUser(query){
